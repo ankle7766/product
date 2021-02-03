@@ -8,3 +8,9 @@ while True:
 print(products)
 for p in products:
     print(p[0],'的價格:',p[1])
+
+with open('product.csv','w',encoding = 'utf-8') as f:
+    f.write('商品,價格\n')
+    for p in products:
+        f.write(p[0] + ',' + p[1] + '\n') #逗點區隔是為了寫入csv檔
+                                          #換行也是必要的
